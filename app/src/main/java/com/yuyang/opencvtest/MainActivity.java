@@ -285,9 +285,9 @@ public class MainActivity extends Activity implements CvCameraViewListener2{
         	ShownImage = mRgba;
         	
         	// draw a slant line to show the slope
-            Core.line(ShownImage, new Point(iBoxTopLeftX+iBoxWidth, iBoxTopLeftY), new Point(iBoxTopLeftX+iBoxWidth-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight), color_green);
+			Imgproc.line(ShownImage, new Point(iBoxTopLeftX+iBoxWidth, iBoxTopLeftY), new Point(iBoxTopLeftX+iBoxWidth-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight), color_green);
             // draw the locating box
-            Core.rectangle( ShownImage, new Point(iBoxTopLeftX, iBoxTopLeftY), new Point(iBoxTopLeftX+iBoxWidth, iBoxTopLeftY+iBoxHeight), color_red, 2, 8, 0 );
+            Imgproc.rectangle( ShownImage, new Point(iBoxTopLeftX, iBoxTopLeftY), new Point(iBoxTopLeftX+iBoxWidth, iBoxTopLeftY+iBoxHeight), color_red, 2, 8, 0 );
         }
           
         /**
@@ -311,7 +311,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2{
         	}
 
         	if (!bIsUserView) { // draw the project value
-        		Core.line(ShownImage, new Point(i-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight), new Point(i-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight+vert_sum*10), color_red);
+        		Imgproc.line(ShownImage, new Point(i-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight), new Point(i-iBoxHeight/dDigitalSlope, iBoxTopLeftY+iBoxHeight+vert_sum*10), color_red);
         	}
         	
         	
@@ -379,7 +379,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2{
         
         // draw bounding rectangles
         for (int i = 0; i < digital_points.size(); i += 2) { 
-        	Core.rectangle(ShownImage, new Point(digital_points.get(i), iBoxTopLeftY), new Point(digital_points.get(i+1), iBoxTopLeftY+iBoxHeight), color_green, 2, 8, 0 );
+        	Imgproc.rectangle(ShownImage, new Point(digital_points.get(i), iBoxTopLeftY), new Point(digital_points.get(i+1), iBoxTopLeftY+iBoxHeight), color_green, 2, 8, 0 );
         }
         
         ArrayList<Integer> digitals_widths = new ArrayList<Integer>(); // widths of the digitals
